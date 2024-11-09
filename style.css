@@ -37,13 +37,15 @@ body{
     margin: 20px 0;
 }
 
-.form form .error-txt{
+.form form .error-text{
     color: #721c24;
     background: #f8d7da;
     padding: 8px 10px;
     text-align: center;
     border-radius: 5px;
     margin-bottom: 10px;
+    border: 1px solid #f5c6cb;
+    display: none;
 }
 
 .form form .name-details{
@@ -118,6 +120,12 @@ form .name-details .field:last-child{
     top: 70%;
     transform: translateY(-50%);
     cursor: pointer;
+}
+
+/* helps in eye cross in shown */
+.form form .field i.active::before{
+  color: #333;
+  content: "\f070";
 }
 
 .users{
@@ -239,6 +247,8 @@ form .name-details .field:last-child{
     color: #468669;
     padding-left: 10px;
   }
+
+  /* class used in php to show offline status */
   .users-list a .status-dot.offline{
     color: #ccc;
   }
@@ -262,6 +272,11 @@ form .name-details .field:last-child{
     font-size: 17px;
     font-weight: 500;
   }
+
+
+  /* The overflow-y: auto property enables a vertical scrollbar 
+  whenever the content within .chat-box exceeds 
+  the set max-height of 500px. */
   .chat-box{
     position: relative;
     min-height: 500px;
@@ -284,6 +299,8 @@ form .name-details .field:last-child{
     margin: 15px 0;
   }
   .chat-box .chat p{
+
+    /* this cause word to break */
     word-wrap: break-word;
     padding: 8px 16px;
     box-shadow: 0 0 32px rgb(0 0 0 / 8%),
