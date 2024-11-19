@@ -43,11 +43,11 @@ if(!empty($fname) && !empty($lname) && !empty($email) && !empty($password)){
                         if(move_uploaded_file($tmp_name, "images/".$new_img_name)){
                             $ran_id = rand(time(), 100000000);      // creating random id
                             $status = "Active now";                            // make status active
-                            $encrypt_pass = md5($password); 
+                            // $encrypt_pass = md5($password); 
 
                             // Insert query
                             $insert_query = mysqli_query($conn, "INSERT INTO users (unique_id, fname, lname, email, password, img, status)
-                                                                VALUES ({$ran_id}, '{$fname}', '{$lname}', '{$email}', '{$encrypt_pass}', '{$new_img_name}', '{$status}')");
+                                                                VALUES ({$ran_id}, '{$fname}', '{$lname}', '{$email}', '{$password}', '{$new_img_name}', '{$status}')");
 
                             if($insert_query){
                                 $select_sql2 = mysqli_query($conn, "SELECT * FROM users WHERE email = '{$email}'");
