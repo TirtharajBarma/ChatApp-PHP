@@ -16,6 +16,8 @@ searchIcon.onclick = ()=>{
 
 searchBar.onkeyup = ()=>{
   let searchTerm = searchBar.value;
+
+  //# ajax -> causing to stay only 1 thing after render
   if(searchTerm != ""){
     searchBar.classList.add("active");
   }else{
@@ -28,6 +30,8 @@ searchBar.onkeyup = ()=>{
         if(xhr.status === 200){
           let data = xhr.response;
           usersList.innerHTML = data;
+          // console.log(data);
+          
         }
     }
   }
@@ -42,12 +46,14 @@ setInterval(() =>{
     if(xhr.readyState === XMLHttpRequest.DONE){
         if(xhr.status === 200){
           let data = xhr.response;
-          if(!searchBar.classList.contains("active")){
+          if(!searchBar.classList.contains("active")){    // if active not contains in search
             usersList.innerHTML = data;
           }
+          // console.log(data);
+          
         }
     }
   }
   xhr.send();
-}, 500);
+}, 500);  // this function will run frequently after 500ms
 
