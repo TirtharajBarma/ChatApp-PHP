@@ -79,15 +79,14 @@ form .name-details .field:last-child{
 }
 
 .form form .button input{
-    margin-top: 13px;
-    height: 45px;
-    border: none;
-    font-size: 17px;
-    font-weight: 500;
-    background: #333;
-    color: #fff;
-    border-radius: 5px;
-    cursor: pointer;
+  height: 45px;
+  border: none;
+  color: #fff;
+  font-size: 17px;
+  background: #333;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 13px;
 }
 
 .form form .input input{
@@ -367,7 +366,12 @@ form .name-details .field:last-child{
     opacity: 1;
     pointer-events: auto;
   }
-  
+  .typing-area button:hover {
+    background-color: #555; 
+    opacity: 1; /* Ensure hover state is clear */
+    cursor: pointer; /* Ensure the pointer cursor appears */
+  }
+
   /* Responive media query */
   @media screen and (max-width: 450px) {
     .form, .users{
